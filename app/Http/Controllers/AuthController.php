@@ -20,7 +20,7 @@ class AuthController extends Controller
         $password = $request->input('password');
 
         $http = new \GuzzleHttp\Client([
-            'base_url' => env('https://pizza-time-app2.herokuapp.com/'),
+            'base_url' => 'https://pizza-time-app2.herokuapp.com/',
             'defaults' => [
                 'headers' => [
                     'Accept' => 'application/json',
@@ -32,7 +32,7 @@ class AuthController extends Controller
 
         try
         {
-            $response = $http->post('http://127.0.0.1:8888/oauth/token', [
+            $response = $http->post('https://pizza-time-app2.herokuapp.com/oauth/token', [
                 'form_params' => [
                     'grant_type' => 'password',
                     'client_id' => env('OAUTH_CLIENT_ID'),
