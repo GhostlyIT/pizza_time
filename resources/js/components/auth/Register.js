@@ -53,14 +53,13 @@ class Register extends Component {
             this.setState({loading: false});
             if (data.status == 'Success') {
                 this.setState({messageState: 'alert-success'});
+                setTimeout(() => window.location.reload(), 2000);
             } else {
                 this.setState({messageState: 'alert-danger'});
             }
             this.setState({messageHead: data.status});
             this.setState({message: data.message});
             this.changeStateForMessage();
-
-            setTimeout(() => window.location.reload(), 2000);
         })
     }
 

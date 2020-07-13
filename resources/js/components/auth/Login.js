@@ -54,6 +54,7 @@ class Login extends Component {
             if (data.status == 'success') {
                 localStorage.setItem('access_token', data.tokens.access_token);
                 this.setState({messageState: 'alert-success'});
+                setTimeout(() => window.location.reload(), 2000);
             } else {
                 this.setState({messageState: 'alert-danger'});
             }
@@ -61,7 +62,7 @@ class Login extends Component {
             this.setState({message: data.message});
             this.changeStateForMessage();
 
-            setTimeout(() => window.location.reload(), 2000);
+
         });
     }
 
