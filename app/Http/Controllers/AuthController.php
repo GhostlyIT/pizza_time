@@ -20,7 +20,7 @@ class AuthController extends Controller
         $password = $request->input('password');
 
         $http = new \GuzzleHttp\Client([
-            'base_url' => env('http://localhost:8888'),
+            'base_url' => env('https://pizza-time-app2.herokuapp.com/'),
             'defaults' => [
                 'headers' => [
                     'Accept' => 'application/json',
